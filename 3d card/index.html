@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.text-center {
+  text-align: center;
+}
+.color-white {
+  color: #fff;
+}
+.box-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 35px 15px;
+  width: 100%;
+}
+@media screen and (min-width:1380px) {
+  .box-container {
+    flex-direction: row
+  }
+}
+.box-item {
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  width: 415px;
+  margin-bottom: 35px;
+  max-width: 100%;
+}
+.flip-box {
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+.front,
+.back {
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  min-height: 475px;
+  -ms-transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+  transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+  -webkit-transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.front {
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.flip-box:hover .front {
+  -ms-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.flip-box:hover .back {
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.flip-box .inner {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 60px;
+  outline: 1px solid transparent;
+  -webkit-perspective: inherit;
+  perspective: inherit;
+  z-index: 2; 
+  transform: translateY(-50%) translateZ(60px) scale(.94);
+  -webkit-transform: translateY(-50%) translateZ(60px) scale(.94);
+  -ms-transform: translateY(-50%) translateZ(60px) scale(.94);
+  top: 50%;
+}
+.header {
+  font-size: 34px;
+}
+
+.flip-box p {
+  font-size: 20px;
+  line-height: 1.5em;
+}
+.img {
+  margin-top: 25px;
+}
+.button {
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 25px;
+  padding: 15px 20px;
+  text-transform: uppercase;
+}
+    </style>
+</head>
+<body>
+    <div class="box-container">
+	<div class="box-item">
+    <div class="flip-box">
+      <div class="front text-center" style="background-image: url('https://cdn.pixabay.com/photo/2018/05/15/09/23/flower-3402550_960_720.jpg');">
+        <div class="inner color-white">
+          <h3 class="header">Flower Image</h3>
+          <p>White flower</p>
+        </div>
+      </div>
+      <div class="back text-center" style="background-image: url('https://cdn.pixabay.com/photo/2018/05/15/09/23/flower-3402550_960_720.jpg');">
+        <div class="inner color-white">
+          <h3 class="header">Flower Image</h3>
+          <p>White flower</p>
+          <button class="button">Learn More</button>
+        </div>
+      </div>
+    </div>
+	</div>
+	<div class="box-item">
+    <div class="flip-box">
+      <div class="front text-center" style="background-image: url('https://images.unsplash.com/photo-1508610048659-a06b669e3321?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80');">
+        <div class="inner color-white">
+          <h3 class="header">Flower image</h3>
+          <p>Multi color flower</p>
+        </div>
+      </div>
+      <div class="back text-center" style="background-image: url('https://images.unsplash.com/photo-1508610048659-a06b669e3321?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80');">
+        <div class="inner color-white">
+          <h3 class="header">Flower image</h3>
+          <p>Multi color flower</p>
+          <button class="button">Learn More</button>
+        </div>
+      </div>
+    </div>
+	</div>
+	<div class="box-item">
+    <div class="flip-box">
+      <div class="front text-center filter-" style="background-image: url('https://images.unsplash.com/photo-1562690887-9181bd338e8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=396&q=80');">
+        <div class="inner color-white">
+          <h3 class="header">Flower Image</h3>
+          <p>Red Rose</p>
+        </div>
+      </div>
+      <div class="back text-center" style="background-image: url('https://images.unsplash.com/photo-1562690887-9181bd338e8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=396&q=80');">
+        <div class="inner color-white">
+          <h3 class="header">Flower Image</h3>
+          <p>Red Rose</p>
+          <button class="button">Learn More</button>
+        </div>
+      </div>
+    </div>
+	</div>
+</div>
+</body>
+</html>
